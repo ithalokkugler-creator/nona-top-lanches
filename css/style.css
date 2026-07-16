@@ -448,7 +448,7 @@ h1 { font-weight: 800; font-size: clamp(3rem, 10vw, 6.5rem); letter-spacing: -.0
   .ficha-acao { gap: .35rem; }
   .preco { font-size: 1.5rem; }
 
-  .btn-zap-grande { font-size: 1.12rem; }
+  .btn-zap-grande { font-size: 1.12rem; width: 100%; justify-content: center; }
   .barra-pedido { width: calc(100vw - 1.5rem); }
   .drawer-card { width: 100vw; }
   .modal-foto img { aspect-ratio: 3 / 2; }
