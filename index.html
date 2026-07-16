@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nona Top Lanches — Cardápio · Hambúrguer artesanal de 150 g</title>
+  <meta name="description" content="O cardápio da Nona Top Lanches: hambúrgueres artesanais de 150 g no pão de brioche, maioneses da casa e bebidas geladas. Monte seu pedido e envie pelo WhatsApp (42) 99935-4244.">
+  <meta name="theme-color" content="#D0342C">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" href="fonts/baloo2-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Nona Top Lanches — Cardápio">
+  <meta property="og:description" content="Hambúrguer artesanal de 150 g, pão de brioche e maioneses da casa. Monte seu pedido pelo WhatsApp (42) 99935-4244.">
+  <meta property="og:image" content="img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Nona Top Lanches",
+    "slogan": "Sabor de casa, carinho de mãe.",
+    "servesCuisine": ["Hambúrgueres", "Lanches"],
+    "telephone": "+5542999354244",
+    "priceRange": "R$ 7 – R$ 38",
+    "address": { "@type": "PostalAddress", "addressRegion": "PR", "addressCountry": "BR" },
+    "hasMenu": {
+      "@type": "Menu",
+      "name": "Cardápio",
+      "hasMenuSection": {
+        "@type": "MenuSection",
+        "name": "Hambúrgueres artesanais",
+        "description": "Todos com hambúrguer artesanal de 150 g.",
+        "hasMenuItem": [
+          { "@type": "MenuItem", "name": "X-Burguer", "description": "Pão de brioche, hambúrguer artesanal 150 g, queijo e presunto.", "offers": { "@type": "Offer", "price": "18.00", "priceCurrency": "BRL" } },
+          { "@type": "MenuItem", "name": "X-Salada", "description": "Pão de brioche, hambúrguer artesanal 150 g, queijo, presunto, alface americana e tomate.", "offers": { "@type": "Offer", "price": "20.00", "priceCurrency": "BRL" } },
+          { "@type": "MenuItem", "name": "X-Egg", "description": "Pão de brioche, hambúrguer artesanal 150 g, ovo, queijo, presunto, alface americana e tomate.", "offers": { "@type": "Offer", "price": "22.00", "priceCurrency": "BRL" } },
+          { "@type": "MenuItem", "name": "X-Calabresa", "description": "Pão de brioche, hambúrguer artesanal 150 g, calabresa, queijo, presunto, alface americana e tomate.", "offers": { "@type": "Offer", "price": "23.00", "priceCurrency": "BRL" } },
+          { "@type": "MenuItem", "name": "X-Bacon", "description": "Pão de brioche, hambúrguer artesanal 150 g, bacon, queijo, presunto, alface americana e tomate.", "offers": { "@type": "Offer", "price": "25.00", "priceCurrency": "BRL" } },
+          { "@type": "MenuItem", "name": "X-Frango", "description": "Pão de brioche, hambúrguer artesanal 150 g, frango, queijo, presunto, alface americana e tomate.", "offers": { "@type": "Offer", "price": "25.00", "priceCurrency": "BRL" } },
+          { "@type": "MenuItem", "name": "X-Pernil", "description": "Pão de brioche, pernil desfiado, queijo cheddar, cebola caramelizada, alface americana e tomate.", "offers": { "@type": "Offer", "price": "28.00", "priceCurrency": "BRL" } },
+          { "@type": "MenuItem", "name": "X-Costela", "description": "Pão de brioche, costela desfiada, queijo, alface americana orgânica e tomate.", "offers": { "@type": "Offer", "price": "30.00", "priceCurrency": "BRL" } },
+          { "@type": "MenuItem", "name": "X-Tudo", "description": "Pão de brioche, hambúrguer artesanal 150 g, frango, bacon, calabresa, ovo, queijo, presunto, alface americana e tomate.", "offers": { "@type": "Offer", "price": "38.00", "priceCurrency": "BRL" } },
+          { "@type": "MenuItem", "name": "X-Da Casa", "description": "Pão de brioche, 2 hambúrgueres, queijo cheddar, cebola, bacon, frango, alface americana orgânica e tomate.", "offers": { "@type": "Offer", "price": "38.00", "priceCurrency": "BRL" } }
+        ]
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#cardapio">Ir direto para o cardápio</a>
+
+  <header class="topo" id="topo">
+    <a class="logo" href="#topo" aria-label="Nona Top Lanches — voltar ao topo">
+      <span class="logo-nona">NONA</span>
+      <span class="logo-sub">TOP LANCHES</span>
+    </a>
+    <nav class="nav" aria-label="Seções do site">
+      <a href="#cardapio">Lanches</a>
+      <a href="#bebidas">Bebidas</a>
+      <a href="#chapa">Fotos</a>
+      <a href="#local">Onde fica</a>
+    </nav>
+    <button class="btn-carrinho" id="abrir-carrinho" aria-label="Abrir meu pedido" aria-haspopup="dialog">
+      <svg class="ico-sacola" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span class="carrinho-txt">Pedido</span>
+      <span class="carrinho-contador" id="contador" hidden>0</span>
+    </button>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ======================= CARDÁPIO (primeiro de tudo) ======================= -->
+    <section class="cardapio" id="cardapio" aria-labelledby="titulo-cardapio">
+      <div class="faixa-titulo">
+        <canvas class="gergelim" aria-hidden="true"></canvas>
+        <div class="faixa-titulo-inner">
+          <p class="kicker">Nona Top Lanches <span aria-hidden="true">✳</span> Sabor de casa, carinho de mãe</p>
+          <h1 id="titulo-cardapio">O CARDÁPIO<span class="rabisco" aria-hidden="true">da casa!</span></h1>
+          <p class="nota-150">★ todos com hambúrguer artesanal de <strong>150&nbsp;g</strong> ★ <span class="dica-toque">toque no lanche pra ver a foto</span></p>
+        </div>
+        <svg class="selo-girando" viewBox="0 0 120 120" aria-hidden="true">
+          <defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+          <circle cx="60" cy="60" r="34" class="selo-miolo"/>
+          <g class="selo-burger">
+            <path d="M46 56 a14 9 0 0 1 28 0" />
+            <path d="M46 61 q3 3 6 0 t6 0 t6 0 t6 0" />
+            <rect x="46" y="66" width="28" height="5" rx="2.5"/>
+            <circle cx="55" cy="52" r="1.1" class="dot"/><circle cx="61" cy="50.5" r="1.1" class="dot"/><circle cx="67" cy="52" r="1.1" class="dot"/>
+          </g>
+          <text><textPath href="#circ">150 G NA CHAPA ★ PÃO BRIOCHE ★ MAIONESE DA CASA ★ </textPath></text>
+        </svg>
+      </div>
+
+      <ol class="fichas" id="lista-lanches">
+        <li class="ficha" data-id="x-burguer" data-nome="X-Burguer" data-preco="18" data-img="img/x-burguer-960.jpg" data-molhos="sim">
+          <button class="ficha-abrir" aria-label="Ver detalhes do X-Burguer">
+            <span class="thumb"><img src="img/x-burguer-thumb.jpg" alt="X-Burguer no pão de brioche" width="320" height="320" loading="eager" decoding="async"></span>
+            <span class="info"><span class="nome">X-Burguer</span><span class="desc">Pão de brioche, hambúrguer artesanal 150&nbsp;g, queijo e presunto.</span></span>
+          </button>
+          <span class="ficha-acao"><span class="preco"><sup>R$</sup>18</span><button class="add-rapido" aria-label="Adicionar X-Burguer ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span>
+        </li>
+
+        <li class="ficha" data-id="x-salada" data-nome="X-Salada" data-preco="20" data-img="img/x-salada-960.jpg" data-molhos="sim">
+          <button class="ficha-abrir" aria-label="Ver detalhes do X-Salada">
+            <span class="thumb"><img src="img/x-salada-thumb.jpg" alt="X-Salada com bastante alface no pão de brioche" width="320" height="320" loading="eager" decoding="async"></span>
+            <span class="info"><span class="nome">X-Salada</span><span class="desc">Pão de brioche, hambúrguer artesanal 150&nbsp;g, queijo, presunto, alface americana e tomate.</span></span>
+          </button>
+          <span class="ficha-acao"><span class="preco"><sup>R$</sup>20</span><button class="add-rapido" aria-label="Adicionar X-Salada ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span>
+        </li>
+
+        <li class="ficha" data-id="x-egg" data-nome="X-Egg" data-preco="22" data-img="img/x-egg-960.jpg" data-molhos="sim">
+          <button class="ficha-abrir" aria-label="Ver detalhes do X-Egg">
+            <span class="thumb"><img src="img/x-egg-thumb.jpg" alt="X-Egg com ovo de gema mole no pão de brioche" width="320" height="320" loading="lazy" decoding="async"></span>
+            <span class="info"><span class="nome">X-Egg</span><span class="desc">Pão de brioche, hambúrguer artesanal 150&nbsp;g, ovo, queijo, presunto, alface americana e tomate.</span></span>
+          </button>
+          <span class="ficha-acao"><span class="preco"><sup>R$</sup>22</span><button class="add-rapido" aria-label="Adicionar X-Egg ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span>
+        </li>
+
+        <li class="ficha" data-id="x-calabresa" data-nome="X-Calabresa" data-preco="23" data-img="img/x-calabresa-960.jpg" data-molhos="sim">
+          <button class="ficha-abrir" aria-label="Ver detalhes do X-Calabresa">
+            <span class="thumb"><img src="img/x-calabresa-thumb.jpg" alt="X-Calabresa com calabresa acebolada no pão de brioche" width="320" height="320" loading="lazy" decoding="async"></span>
+            <span class="info"><span class="nome">X-Calabresa</span><span class="desc">Pão de brioche, hambúrguer artesanal 150&nbsp;g, calabresa, queijo, presunto, alface americana e tomate.</span></span>
+          </button>
+          <span class="ficha-acao"><span class="preco"><sup>R$</sup>23</span><button class="add-rapido" aria-label="Adicionar X-Calabresa ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span>
+        </li>
+
+        <li class="ficha" data-id="x-bacon" data-nome="X-Bacon" data-preco="25" data-img="img/x-bacon-960.jpg" data-molhos="sim">
+          <button class="ficha-abrir" aria-label="Ver detalhes do X-Bacon">
+            <span class="thumb"><img src="img/x-bacon-thumb.jpg" alt="X-Bacon com cubos de bacon dourado no pão de brioche" width="320" height="320" loading="lazy" decoding="async"></span>
+            <span class="info"><span class="nome">X-Bacon</span><span class="desc">Pão de brioche, hambúrguer artesanal 150&nbsp;g, bacon, queijo, presunto, alface americana e tomate.</span></span>
+          </button>
+          <span class="ficha-acao"><span class="preco"><sup>R$</sup>25</span><button class="add-rapido" aria-label="Adicionar X-Bacon ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span>
+        </li>
+
+        <li class="ficha" data-id="x-frango" data-nome="X-Frango" data-preco="25" data-img="img/x-frango-960.jpg" data-molhos="sim">
+          <button class="ficha-abrir" aria-label="Ver detalhes do X-Frango">
+            <span class="thumb"><img src="img/x-frango-thumb.jpg" alt="X-Frango com frango grelhado no pão de brioche" width="320" height="320" loading="lazy" decoding="async"></span>
+            <span class="info"><span class="nome">X-Frango</span><span class="desc">Pão de brioche, hambúrguer artesanal 150&nbsp;g, frango, queijo, presunto, alface americana e tomate.</span></span>
+          </button>
+          <span class="ficha-acao"><span class="preco"><sup>R$</sup>25</span><button class="add-rapido" aria-label="Adicionar X-Frango ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span>
+        </li>
+
+        <li class="ficha" data-id="x-pernil" data-nome="X-Pernil" data-preco="28" data-img="img/x-pernil-960.jpg" data-molhos="sim">
+          <button class="ficha-abrir" aria-label="Ver detalhes do X-Pernil">
+            <span class="thumb"><img src="img/x-pernil-thumb.jpg" alt="X-Pernil com pernil desfiado e cebola caramelizada no pão de brioche" width="320" height="320" loading="lazy" decoding="async"></span>
+            <span class="info"><span class="nome">X-Pernil</span><span class="desc">Pão de brioche, pernil desfiado, queijo cheddar, cebola caramelizada, alface americana e tomate.</span></span>
+          </button>
+          <span class="ficha-acao"><span class="preco"><sup>R$</sup>28</span><button class="add-rapido" aria-label="Adicionar X-Pernil ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span>
+        </li>
+
+        <li class="ficha" data-id="x-costela" data-nome="X-Costela" data-preco="30" data-img="img/x-costela-960.jpg" data-molhos="sim">
+          <button class="ficha-abrir" aria-label="Ver detalhes do X-Costela">
+            <span class="thumb"><img src="img/x-costela-thumb.jpg" alt="X-Costela com costela desfiada no pão de brioche" width="320" height="320" loading="lazy" decoding="async"></span>
+            <span class="info"><span class="nome">X-Costela</span><span class="desc">Pão de brioche, costela desfiada, queijo, alface americana orgânica e tomate.</span></span>
+          </button>
+          <span class="ficha-acao"><span class="preco"><sup>R$</sup>30</span><button class="add-rapido" aria-label="Adicionar X-Costela ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span>
+        </li>
+
+        <li class="ficha destaque" data-id="x-tudo" data-nome="X-Tudo" data-preco="38" data-img="img/x-tudo-960.jpg" data-molhos="sim">
+          <span class="sticker" aria-hidden="true">o mais pedido!</span>
+          <button class="ficha-abrir" aria-label="Ver detalhes do X-Tudo">
+            <span class="thumb"><img src="img/x-tudo-thumb.jpg" alt="X-Tudo alto com ovo, frango, calabresa e bacon no pão de brioche" width="320" height="320" loading="lazy" decoding="async"></span>
+            <span class="info"><span class="nome">X-Tudo</span><span class="desc">Pão de brioche, hambúrguer artesanal 150&nbsp;g, frango, bacon, calabresa, ovo, queijo, presunto, alface americana e tomate.</span></span>
+          </button>
+          <span class="ficha-acao"><span class="preco"><sup>R$</sup>38</span><button class="add-rapido" aria-label="Adicionar X-Tudo ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span>
+        </li>
+
+        <li class="ficha destaque" data-id="x-da-casa" data-nome="X-Da Casa" data-preco="38" data-img="img/x-da-casa-960.jpg" data-molhos="sim">
+          <span class="sticker sticker-2" aria-hidden="true">pra dividir (ou não)</span>
+          <button class="ficha-abrir" aria-label="Ver detalhes do X-Da Casa">
+            <span class="thumb"><img src="img/x-da-casa-thumb.jpg" alt="X-Da Casa com dois hambúrgueres e cheddar escorrendo no pão de brioche" width="320" height="320" loading="lazy" decoding="async"></span>
+            <span class="info"><span class="nome">X-Da Casa</span><span class="desc">Pão de brioche, 2 hambúrgueres, queijo cheddar, cebola, bacon, frango, alface americana orgânica e tomate.</span></span>
+          </button>
+          <span class="ficha-acao"><span class="preco"><sup>R$</sup>38</span><button class="add-rapido" aria-label="Adicionar X-Da Casa ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span>
+        </li>
+      </ol>
+
+      <p class="obs">Quer tirar ou trocar algum ingrediente? É só avisar no pedido. <strong>Ingredientes adicionais: consultar valor.</strong></p>
+    </section>
+
+    <!-- ======================= BEBIDAS ======================= -->
+    <section class="bebidas" id="bebidas" aria-labelledby="titulo-bebidas">
+      <div class="bebidas-cabeca">
+        <h2 id="titulo-bebidas">BEBIDAS</h2>
+        <p>Pra acompanhar o lanche — tudo geladinho.</p>
+      </div>
+
+      <div class="bebida-grupo">
+        <h3>Águas</h3>
+        <ul class="bebida-lista">
+          <li class="bebida" data-id="agua-sem-gas" data-nome="Água sem gás 500ml" data-preco="7"><span class="b-nome">Água sem gás <small>500&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;7,00</span><button class="add-rapido" aria-label="Adicionar Água sem gás ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+          <li class="bebida" data-id="agua-gas" data-nome="Água com gás 500ml" data-preco="7"><span class="b-nome">Água com gás <small>500&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;7,00</span><button class="add-rapido" aria-label="Adicionar Água com gás ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+        </ul>
+      </div>
+
+      <div class="bebida-grupo">
+        <h3>Refrigerantes</h3>
+        <ul class="bebida-lista">
+          <li class="bebida" data-id="coca-lata" data-nome="Coca-Cola lata 350ml" data-preco="8"><span class="b-nome">Coca-Cola <small>lata 350&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;8,00</span><button class="add-rapido" aria-label="Adicionar Coca-Cola lata ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+          <li class="bebida" data-id="coca-zero-600" data-nome="Coca-Cola Zero 600ml" data-preco="9"><span class="b-nome">Coca-Cola Zero <small>600&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;9,00</span><button class="add-rapido" aria-label="Adicionar Coca-Cola Zero 600ml ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+          <li class="bebida" data-id="coca-600" data-nome="Coca-Cola 600ml" data-preco="11"><span class="b-nome">Coca-Cola <small>garrafa 600&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;11,00</span><button class="add-rapido" aria-label="Adicionar Coca-Cola 600ml ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+          <li class="bebida" data-id="coca-2l" data-nome="Coca-Cola 2L" data-preco="17"><span class="b-nome">Coca-Cola <small>2&nbsp;litros</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;17,00</span><button class="add-rapido" aria-label="Adicionar Coca-Cola 2 litros ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+          <li class="bebida" data-id="fanta-lata" data-nome="Fanta Laranja lata 350ml" data-preco="7"><span class="b-nome">Fanta Laranja <small>lata 350&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;7,00</span><button class="add-rapido" aria-label="Adicionar Fanta Laranja lata ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+          <li class="bebida" data-id="fanta-2l" data-nome="Fanta Laranja 2L" data-preco="16"><span class="b-nome">Fanta Laranja <small>2&nbsp;litros</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;16,00</span><button class="add-rapido" aria-label="Adicionar Fanta Laranja 2 litros ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+          <li class="bebida" data-id="sprite" data-nome="Sprite 350ml" data-preco="7"><span class="b-nome">Sprite <small>350&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;7,00</span><button class="add-rapido" aria-label="Adicionar Sprite ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+        </ul>
+      </div>
+
+      <div class="bebida-grupo">
+        <h3>Cervejas</h3>
+        <ul class="bebida-lista">
+          <li class="bebida" data-id="brahma" data-nome="Brahma 350ml" data-preco="7"><span class="b-nome">Brahma <small>350&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;7,00</span><button class="add-rapido" aria-label="Adicionar Brahma ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+          <li class="bebida" data-id="antarctica" data-nome="Antarctica 350ml" data-preco="7"><span class="b-nome">Antarctica <small>350&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;7,00</span><button class="add-rapido" aria-label="Adicionar Antarctica ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+          <li class="bebida" data-id="skol" data-nome="Skol 350ml" data-preco="7"><span class="b-nome">Skol <small>350&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;7,00</span><button class="add-rapido" aria-label="Adicionar Skol ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+          <li class="bebida" data-id="brahma-zero" data-nome="Brahma Zero Álcool 350ml" data-preco="7"><span class="b-nome">Brahma Zero Álcool <small>350&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;7,00</span><button class="add-rapido" aria-label="Adicionar Brahma Zero ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+          <li class="bebida" data-id="sol" data-nome="Sol 330ml" data-preco="8"><span class="b-nome">Sol <small>330&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;8,00</span><button class="add-rapido" aria-label="Adicionar Sol ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+          <li class="bebida" data-id="pilsen" data-nome="Original Pilsen 300ml" data-preco="8"><span class="b-nome">Original Pilsen <small>300&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;8,00</span><button class="add-rapido" aria-label="Adicionar Original Pilsen ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+          <li class="bebida" data-id="budweiser" data-nome="Budweiser 350ml" data-preco="9.5"><span class="b-nome">Budweiser <small>350&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;9,50</span><button class="add-rapido" aria-label="Adicionar Budweiser ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+          <li class="bebida" data-id="heineken" data-nome="Heineken 350ml" data-preco="9.5"><span class="b-nome">Heineken <small>350&nbsp;ml</small></span><span class="b-acao"><span class="b-preco">R$&nbsp;9,50</span><button class="add-rapido" aria-label="Adicionar Heineken ao pedido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></span></li>
+        </ul>
+        <p class="aviso-idade">🔞 Bebida alcoólica. Venda proibida para menores de 18 anos.</p>
+      </div>
+    </section>
+
+    <!-- ======================= MARQUEE ======================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-trilho">
+        <span>SABOR DE CASA ★ CARINHO DE MÃE ★ 150&nbsp;G NA CHAPA ★ PÃO DE BRIOCHE ★ MAIONESE VERDE DA CASA ★&nbsp;</span><span>SABOR DE CASA ★ CARINHO DE MÃE ★ 150&nbsp;G NA CHAPA ★ PÃO DE BRIOCHE ★ MAIONESE VERDE DA CASA ★&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ======================= DIRETO DA CHAPA ======================= -->
+    <section class="chapa" id="chapa" aria-labelledby="titulo-chapa">
+      <div class="chapa-cabeca">
+        <h2 id="titulo-chapa">DIRETO DA CHAPA</h2>
+        <p>É assim que o lanche chega na sua mão.</p>
+        <p class="dica-arrastar" aria-hidden="true">arrasta pro lado →</p>
+      </div>
+      <ul class="trilho" aria-label="Fotos dos lanches">
+        <li class="prato"><figure><img src="img/x-tudo-480.jpg" srcset="img/x-tudo-480.jpg 480w, img/x-tudo-960.jpg 960w" sizes="(max-width: 720px) 78vw, 420px" alt="X-Tudo montado com ovo, frango, calabresa e bacon" width="480" height="362" loading="lazy" decoding="async"><figcaption><strong>X-Tudo</strong> · o campeão da casa</figcaption></figure></li>
+        <li class="prato"><figure><img src="img/x-da-casa-480.jpg" srcset="img/x-da-casa-480.jpg 480w, img/x-da-casa-960.jpg 960w" sizes="(max-width: 720px) 78vw, 420px" alt="X-Da Casa com dois hambúrgueres e cheddar" width="480" height="362" loading="lazy" decoding="async"><figcaption><strong>X-Da Casa</strong> · dois hambúrgueres e cheddar</figcaption></figure></li>
+        <li class="prato"><figure><img src="img/x-bacon-480.jpg" srcset="img/x-bacon-480.jpg 480w, img/x-bacon-960.jpg 960w" sizes="(max-width: 720px) 78vw, 420px" alt="X-Bacon com cubos de bacon dourado" width="480" height="362" loading="lazy" decoding="async"><figcaption><strong>X-Bacon</strong> · bacon em cubo, dourado na hora</figcaption></figure></li>
+        <li class="prato"><figure><img src="img/x-egg-480.jpg" srcset="img/x-egg-480.jpg 480w, img/x-egg-960.jpg 960w" sizes="(max-width: 720px) 78vw, 420px" alt="X-Egg com ovo de gema mole" width="480" height="362" loading="lazy" decoding="async"><figcaption><strong>X-Egg</strong> · ovo com a gema no ponto</figcaption></figure></li>
+        <li class="prato"><figure><img src="img/x-calabresa-480.jpg" srcset="img/x-calabresa-480.jpg 480w, img/x-calabresa-960.jpg 960w" sizes="(max-width: 720px) 78vw, 420px" alt="X-Calabresa com calabresa acebolada" width="480" height="362" loading="lazy" decoding="async"><figcaption><strong>X-Calabresa</strong> · calabresa na chapa</figcaption></figure></li>
+        <li class="prato"><figure><img src="img/x-pernil-480.jpg" srcset="img/x-pernil-480.jpg 480w, img/x-pernil-960.jpg 960w" sizes="(max-width: 720px) 78vw, 420px" alt="X-Pernil com pernil desfiado e cebola caramelizada" width="480" height="362" loading="lazy" decoding="async"><figcaption><strong>X-Pernil</strong> · pernil e cebola caramelizada</figcaption></figure></li>
+        <li class="prato"><figure><img src="img/x-costela-480.jpg" srcset="img/x-costela-480.jpg 480w, img/x-costela-960.jpg 960w" sizes="(max-width: 720px) 78vw, 420px" alt="X-Costela com costela desfiada" width="480" height="362" loading="lazy" decoding="async"><figcaption><strong>X-Costela</strong> · costela que desmancha</figcaption></figure></li>
+        <li class="prato"><figure><img src="img/x-salada-480.jpg" srcset="img/x-salada-480.jpg 480w, img/x-salada-960.jpg 960w" sizes="(max-width: 720px) 78vw, 420px" alt="X-Salada com bastante alface americana" width="480" height="362" loading="lazy" decoding="async"><figcaption><strong>X-Salada</strong> · alface fresquinha, sem tristeza</figcaption></figure></li>
+      </ul>
+    </section>
+
+    <!-- ======================= FEITO NA CASA ======================= -->
+    <section class="casa" id="casa" aria-labelledby="titulo-casa">
+      <h2 id="titulo-casa">FEITO NA CASA</h2>
+      <div class="casa-grid">
+        <article class="maionese">
+          <div class="foto-selo">
+            <img src="img/maionese-verde-480.jpg" srcset="img/maionese-verde-480.jpg 480w, img/maionese-verde-960.jpg 960w" sizes="(max-width: 720px) 88vw, 480px" alt="Copinho da maionese verde de alho da casa" width="480" height="320" loading="lazy" decoding="async">
+            <span class="selo-verde" aria-hidden="true">feita aqui,<br>todo dia</span>
+          </div>
+          <h3>As maioneses da casa</h3>
+          <p>A famosa <strong>verde de alho</strong>, a <strong>artesanal</strong> e a <strong>artesanal de bacon</strong> — todas batidas aqui. Escolha como adicional ao montar o seu lanche.</p>
+        </article>
+        <article class="doces">
+          <p class="rabisco-doces" aria-hidden="true">e pra adoçar…</p>
+          <ul class="doces-fila">
+            <li><img src="img/doce-brigadeiro-480.jpg" alt="Brigadeiro com granulado na forminha vermelha" width="480" height="320" loading="lazy" decoding="async"><span>Brigadeiro</span></li>
+            <li><img src="img/doce-beijinho-480.jpg" alt="Beijinho de coco na forminha vermelha" width="480" height="320" loading="lazy" decoding="async"><span>Beijinho</span></li>
+            <li><img src="img/doce-amendoim-480.jpg" alt="Docinho coberto de amendoim crocante" width="480" height="320" loading="lazy" decoding="async"><span>Cajuzinho</span></li>
+          </ul>
+          <p class="doces-nota">Docinhos da casa — pergunte os sabores do dia no balcão ou no WhatsApp.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ======================= LOCAL / PEDIDOS ======================= -->
+    <section class="local" id="local" aria-labelledby="titulo-local">
+      <figure class="fachada">
+        <img src="img/fachada-800.jpg" srcset="img/fachada-800.jpg 800w, img/fachada-1600.jpg 1600w" sizes="(max-width: 900px) 92vw, 560px" alt="Fachada da Nona Top Lanches no fim de tarde: quiosque branco com lonas vermelhas e o letreiro NONA" width="800" height="533" loading="lazy" decoding="async">
+        <figcaption>O quiosque no fim de tarde — pode chegar.</figcaption>
+      </figure>
+      <div class="local-info">
+        <h2 id="titulo-local">BATEU A FOME?</h2>
+        <p class="local-frase">Monte seu pedido aqui no site e mande pra gente no WhatsApp — a chapa já acende.</p>
+        <button class="btn-zap btn-zap-grande" id="local-pedido">
+          <svg class="ico-sacola" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          Ver meu pedido
+        </button>
+        <p class="ou-direto">ou fale direto: <a href="https://wa.me/5542999354244?text=Oi!%20Tenho%20uma%20d%C3%BAvida." target="_blank" rel="noopener">chamar no WhatsApp</a></p>
+        <p class="fone">(42) 99935-4244</p>
+        <p class="mini">Retirada no balcão · Ingredientes adicionais: consultar valor.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======================= RODAPÉ ======================= -->
+  <footer class="rodape">
+    <p class="marca" aria-hidden="true"><span>N</span><span class="letra-o">O</span><span>N</span><span>A</span></p>
+    <p class="rodape-linha">© 2026 Nona Top Lanches <span class="star">★</span> (42) 99935-4244 <span class="star">★</span> Sabor de casa, carinho de mãe.</p>
+  </footer>
+
+  <!-- ======================= BARRA DO PEDIDO (aparece com itens) ======================= -->
+  <button class="barra-pedido" id="barra-pedido" hidden aria-label="Ver meu pedido">
+    <span class="barra-esq"><svg class="ico-sacola" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="barra-contador" id="barra-contador">0</span> <span class="barra-label">Ver meu pedido</span></span>
+    <span class="barra-total" id="barra-total">R$ 0,00</span>
+  </button>
+
+  <!-- ======================= MODAL DE DETALHE ======================= -->
+  <div class="modal-overlay" id="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-nome">
+      <button class="modal-fechar" id="modal-fechar" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="modal-foto"><img id="modal-img" src="" alt="" width="960" height="720" decoding="async"></div>
+      <div class="modal-corpo">
+        <h3 id="modal-nome"></h3>
+        <p class="modal-desc" id="modal-desc"></p>
+        <div class="modal-adicionais">
+          <p class="adic-titulo">Adicionais <span>· maioneses da casa (valor a combinar)</span></p>
+          <div class="chips" id="modal-molhos"></div>
+        </div>
+        <div class="modal-rodape">
+          <div class="qtd" role="group" aria-label="Quantidade">
+            <button class="qtd-menos" id="modal-menos" aria-label="Diminuir quantidade">−</button>
+            <span class="qtd-valor" id="modal-qtd" aria-live="polite">1</span>
+            <button class="qtd-mais" id="modal-mais" aria-label="Aumentar quantidade">+</button>
+          </div>
+          <button class="modal-add" id="modal-add">Adicionar <span id="modal-add-valor">R$ 0,00</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================= GAVETA DO CARRINHO ======================= -->
+  <div class="drawer-overlay" id="drawer" hidden>
+    <aside class="drawer-card" role="dialog" aria-modal="true" aria-labelledby="drawer-titulo">
+      <header class="drawer-topo">
+        <h3 id="drawer-titulo">Meu pedido</h3>
+        <button class="drawer-fechar" id="drawer-fechar" aria-label="Fechar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </header>
+      <div class="drawer-corpo">
+        <p class="drawer-vazio" id="drawer-vazio">Seu pedido está vazio.<br><span>Toque no <b>+</b> dos lanches pra começar.</span></p>
+        <ul class="drawer-itens" id="drawer-itens"></ul>
+      </div>
+      <footer class="drawer-rodape" id="drawer-rodape" hidden>
+        <div class="drawer-linha-total">
+          <span>Subtotal</span>
+          <strong id="drawer-total">R$ 0,00</strong>
+        </div>
+        <p class="drawer-obs" id="drawer-obs" hidden>+ adicionais/molhos a combinar no balcão.</p>
+        <button class="drawer-enviar" id="drawer-enviar">
+          <svg class="ico-zap" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 2a8 8 0 1 1-4.1 14.9l-.5-.3-3 .8.8-2.9-.3-.5A8 8 0 0 1 12 4Zm-3 4.2c-.2 0-.5 0-.7.3-.9 1-.8 2.4.1 3.8 1 1.5 2.4 2.9 4.2 3.7 1.5.7 2.6.8 3.5.3.5-.3.9-.9 1-1.5 0-.3 0-.5-.2-.6l-1.7-.8c-.2-.1-.5-.1-.6.1l-.6.7c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.1-2.7c-.1-.2-.1-.4.1-.5l.6-.6c.2-.2.2-.4.1-.6L10 8.6c-.1-.3-.3-.4-.5-.4h-.4Z"/></svg>
+          Enviar pedido no WhatsApp
+        </button>
+        <button class="drawer-limpar" id="drawer-limpar">Esvaziar pedido</button>
+      </footer>
+    </aside>
+  </div>
+
+  <script src="js/vendor/gsap.min.js" defer></script>
+  <script src="js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
