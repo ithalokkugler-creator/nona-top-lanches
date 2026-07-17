@@ -19,6 +19,55 @@
 
   function brl(n) { return 'R$ ' + n.toFixed(2).replace('.', ','); }
 
+  /* ============================================================
+     PREÇOS — lê js/precos.js (window.PRECOS) e sincroniza tudo:
+     texto exibido, data-preco (usado pelo carrinho) e o JSON-LD
+     de SEO. Se precos.js não carregar ou faltar algum item, o
+     valor já escrito no HTML continua valendo — nada quebra.
+     ============================================================ */
+  (function aplicarPrecos() {
+    var tabela = window.PRECOS || {};
+    function fmtLanche(n) { return Number.isInteger(n) ? String(n) : n.toFixed(2).replace('.', ','); }
+    function fmtBebida(n) { return n.toFixed(2).replace('.', ','); }
+
+    document.querySelectorAll('.ficha[data-id]').forEach(function (el) {
+      var id = el.getAttribute('data-id');
+      if (tabela[id] === undefined) return;
+      var preco = Number(tabela[id]);
+      el.setAttribute('data-preco', preco);
+      var span = el.querySelector('.preco');
+      if (span) span.innerHTML = '<sup>R$</sup>' + fmtLanche(preco);
+    });
+
+    document.querySelectorAll('.bebida[data-id]').forEach(function (el) {
+      var id = el.getAttribute('data-id');
+      if (tabela[id] === undefined) return;
+      var preco = Number(tabela[id]);
+      el.setAttribute('data-preco', preco);
+      var span = el.querySelector('.b-preco');
+      if (span) span.textContent = 'R$ ' + fmtBebida(preco);
+    });
+
+    var ld = document.querySelector('script[type="application/ld+json"]');
+    if (ld) {
+      try {
+        var dados = JSON.parse(ld.textContent);
+        var itens = [];
+        document.querySelectorAll('.ficha[data-id]').forEach(function (el) {
+          var desc = el.querySelector('.desc');
+          itens.push({
+            '@type': 'MenuItem',
+            name: el.getAttribute('data-nome'),
+            description: desc ? desc.textContent.trim() : '',
+            offers: { '@type': 'Offer', price: Number(el.getAttribute('data-preco')).toFixed(2), priceCurrency: 'BRL' }
+          });
+        });
+        dados.hasMenu.hasMenuSection.hasMenuItem = itens;
+        ld.textContent = JSON.stringify(dados);
+      } catch (e) { /* JSON-LD original permanece se algo vier inesperado */ }
+    }
+  })();
+
   /* ---------- estado do carrinho ---------- */
   var cart = [];
   try { var salvo = JSON.parse(localStorage.getItem('nona-pedido') || '[]'); if (Array.isArray(salvo)) cart = salvo; } catch (e) {}
