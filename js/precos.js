@@ -33,12 +33,12 @@ window.PRECOS = {
   'agua-sem-gas':   7,    // Água sem gás 500ml
   'agua-gas':       7,    // Água com gás 500ml
   'coca-lata':      8,    // Coca-Cola lata 350ml
-  'coca-zero-600':  9,    // Coca-Cola Zero 600ml
+  'coca-zero-600':  11,    // Coca-Cola Zero 600ml
   'coca-600':      11,    // Coca-Cola garrafa 600ml
   'coca-2l':       17,    // Coca-Cola 2 litros
-  'fanta-lata':     7,    // Fanta Laranja lata 350ml
-  'fanta-2l':      16,    // Fanta Laranja 2 litros
-  'sprite':         7,    // Sprite 350ml
+  'fanta-lata':     8,    // Fanta Laranja lata 350ml
+  'fanta-2l':      17,    // Fanta Laranja 2 litros
+  'sprite':         8,    // Sprite 350ml
   'brahma':         7,    // Brahma 350ml
   'antarctica':     7,    // Antarctica 350ml
   'skol':           7,    // Skol 350ml
