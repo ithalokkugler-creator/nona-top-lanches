@@ -356,6 +356,7 @@ h1 { font-weight: 800; font-size: clamp(3rem, 10vw, 6.5rem); letter-spacing: -.0
   font-weight: 600; font-size: .92rem; user-select: none;
 }
 .chip img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--carvao); }
+.chip-preco { color: var(--laranja); font-weight: 700; font-size: .85rem; white-space: nowrap; }
 .chip input { position: absolute; opacity: 0; width: 0; height: 0; }
 .chip .marca-check { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--kraft-borda); display: grid; place-items: center; margin-left: .1rem; flex: none; }
 .chip .marca-check::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--verde); transform: scale(0); transition: transform .15s ease; }

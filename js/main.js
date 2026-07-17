@@ -68,21 +68,30 @@
     }
   })();
 
+  /* preço do adicional de molho — lido de precos.js; 4 é só o valor de hoje, usado
+     apenas se precos.js não carregar por algum motivo */
+  var PRECO_MOLHO = Number(window.PRECOS && window.PRECOS['molho-extra'] !== undefined ? window.PRECOS['molho-extra'] : 4);
+  function fmtMolho(n) { return Number.isInteger(n) ? ('+R$' + n) : ('+R$ ' + n.toFixed(2).replace('.', ',')); }
+  (function atualizarTextoAdicionais() {
+    var el = document.querySelector('.adic-titulo span');
+    if (el) el.textContent = '· maioneses da casa (' + fmtMolho(PRECO_MOLHO) + ' cada)';
+  })();
+
   /* ---------- estado do carrinho ---------- */
   var cart = [];
   try { var salvo = JSON.parse(localStorage.getItem('nona-pedido') || '[]'); if (Array.isArray(salvo)) cart = salvo; } catch (e) {}
   function salvar() { try { localStorage.setItem('nona-pedido', JSON.stringify(cart)); } catch (e) {} }
   function totalItens() { return cart.reduce(function (s, l) { return s + l.qtd; }, 0); }
-  function totalPreco() { return cart.reduce(function (s, l) { return s + l.preco * l.qtd; }, 0); }
-  function temMolho() { return cart.some(function (l) { return l.molhos && l.molhos.length; }); }
+  function totalPreco() { return cart.reduce(function (s, l) { return s + (l.preco + (l.molhoPreco || 0)) * l.qtd; }, 0); }
 
   function adicionar(item, qtd, molhos) {
     molhos = molhos || [];
     var key = item.id + '|' + molhos.slice().sort().join(',');
+    var molhoPreco = molhos.length * PRECO_MOLHO;
     var existente = null;
     for (var i = 0; i < cart.length; i++) if (cart[i].key === key) { existente = cart[i]; break; }
     if (existente) existente.qtd += qtd;
-    else cart.push({ key: key, id: item.id, nome: item.nome, preco: item.preco, qtd: qtd, molhos: molhos });
+    else cart.push({ key: key, id: item.id, nome: item.nome, preco: item.preco, molhoPreco: molhoPreco, qtd: qtd, molhos: molhos });
     salvar(); atualizarUI(true);
   }
   function mudarQtd(key, delta) {
@@ -179,7 +188,11 @@
   var modalAddValor = document.getElementById('modal-add-valor');
   var itemAtual = null, qtdModal = 1;
 
-  function atualizarValorModal() { modalAddValor.textContent = brl(itemAtual.preco * qtdModal); }
+  function atualizarValorModal() {
+    var qtdMolhos = modalMolhos.querySelectorAll('input:checked').length;
+    var unit = itemAtual.preco + qtdMolhos * PRECO_MOLHO;
+    modalAddValor.textContent = brl(unit * qtdModal);
+  }
 
   function abrirModal(ficha) {
     itemAtual = {
@@ -196,7 +209,7 @@
     modalMolhos.innerHTML = MOLHOS.map(function (m) {
       return '<label class="chip"><input type="checkbox" value="' + m.id + '">' +
              '<img src="' + m.img + '" alt="" width="34" height="34" loading="lazy">' +
-             '<span>' + m.nome + '</span><span class="marca-check" aria-hidden="true"></span></label>';
+             '<span>' + m.nome + '</span><span class="chip-preco">' + fmtMolho(PRECO_MOLHO) + '</span><span class="marca-check" aria-hidden="true"></span></label>';
     }).join('');
     qtdModal = 1; modalQtdEl.textContent = '1';
     atualizarValorModal();
@@ -205,6 +218,7 @@
 
   document.getElementById('modal-fechar').addEventListener('click', function () { fecharOverlay(modal); });
   modal.addEventListener('click', function (e) { if (e.target === modal) fecharOverlay(modal); });
+  modalMolhos.addEventListener('change', atualizarValorModal);
   document.getElementById('modal-menos').addEventListener('click', function () { if (qtdModal > 1) { qtdModal--; modalQtdEl.textContent = qtdModal; atualizarValorModal(); } });
   document.getElementById('modal-mais').addEventListener('click', function () { if (qtdModal < 30) { qtdModal++; modalQtdEl.textContent = qtdModal; atualizarValorModal(); } });
   document.getElementById('modal-add').addEventListener('click', function () {
@@ -221,7 +235,6 @@
   var drawerVazio = document.getElementById('drawer-vazio');
   var drawerRodape = document.getElementById('drawer-rodape');
   var drawerTotal = document.getElementById('drawer-total');
-  var drawerObs = document.getElementById('drawer-obs');
 
   function renderDrawer() {
     if (!cart.length) {
@@ -233,11 +246,12 @@
     drawerVazio.hidden = true;
     drawerRodape.hidden = false;
     drawerItens.innerHTML = cart.map(function (l) {
+      var molhoPreco = l.molhoPreco || 0;
       var molhos = (l.molhos && l.molhos.length)
-        ? '<span class="di-molhos">+ ' + l.molhos.map(molhoNome).join(', ') + '</span>' : '';
+        ? '<span class="di-molhos">+ ' + l.molhos.map(molhoNome).join(', ') + ' (' + fmtMolho(molhoPreco) + ' cada)</span>' : '';
       return '<li class="drawer-item" data-key="' + l.key + '">' +
         '<span class="di-nome">' + l.nome + '</span>' +
-        '<span class="di-preco">' + brl(l.preco * l.qtd) + '</span>' +
+        '<span class="di-preco">' + brl((l.preco + molhoPreco) * l.qtd) + '</span>' +
         molhos +
         '<div class="di-baixo">' +
           '<div class="di-qtd">' +
@@ -250,7 +264,6 @@
       '</li>';
     }).join('');
     drawerTotal.textContent = brl(totalPreco());
-    drawerObs.hidden = !temMolho();
   }
 
   drawerItens.addEventListener('click', function (e) {
@@ -273,12 +286,12 @@
     if (!cart.length) return;
     var linhas = ['Olá, Nona! 👋 Segue meu pedido:', ''];
     cart.forEach(function (l) {
-      linhas.push('• ' + l.qtd + 'x ' + l.nome + ' — ' + brl(l.preco * l.qtd));
-      if (l.molhos && l.molhos.length) linhas.push('   ↳ ' + l.molhos.map(molhoNome).join(', ') + ' (a combinar)');
+      var molhoPreco = l.molhoPreco || 0;
+      linhas.push('• ' + l.qtd + 'x ' + l.nome + ' — ' + brl((l.preco + molhoPreco) * l.qtd));
+      if (l.molhos && l.molhos.length) linhas.push('   ↳ ' + l.molhos.map(molhoNome).join(', ') + ' (' + fmtMolho(molhoPreco) + ' cada)');
     });
     linhas.push('');
     linhas.push('Subtotal: ' + brl(totalPreco()));
-    if (temMolho()) linhas.push('Adicionais/molhos: a combinar no balcão.');
     linhas.push('');
     linhas.push('Retirada no balcão. Obrigado! 🍔');
     window.open('https://wa.me/' + ZAP + '?text=' + encodeURIComponent(linhas.join('\n')), '_blank');

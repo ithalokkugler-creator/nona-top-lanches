@@ -14,6 +14,10 @@
      não o nome que o cliente vê
    - Pra adicionar um item novo, é preciso mexer também no
      index.html — chama que eu ajudo com isso
+   - O item especial 'molho-extra' não é um lanche: é quanto
+     cobrar A MAIS por CADA maionese/molho que o cliente escolher
+     ao montar o lanche (se ele marcar 2 molhos, cobra 2x esse
+     valor). Não é um item do cardápio, por isso não tem foto.
    ============================================================ */
 window.PRECOS = {
 
@@ -46,6 +50,9 @@ window.PRECOS = {
   'sol':            8,    // Sol 330ml
   'pilsen':         8,    // Original Pilsen 300ml
   'budweiser':    9.5,    // Budweiser 350ml
-  'heineken':     9.5     // Heineken 350ml (sem vírgula na última linha)
+  'heineken':     9.5,    // Heineken 350ml
+
+  // ===== ADICIONAL DE MOLHO (não é um item do cardápio, veja acima) =====
+  'molho-extra':    4     // quanto cobrar A MAIS por cada molho escolhido (sem vírgula na última linha)
 
 };
